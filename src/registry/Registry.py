@@ -7,19 +7,17 @@ from typing import Dict
 from registry import RegistryKey, RegistryTable
 from util import Identifier
 
-_REGISTRY_TABLES: Dict[RegistryKey, RegistryTable]
+_REGISTRY_TABLES: Dict[RegistryKey, RegistryTable] = dict()
 
 
-def register(key: RegistryKey, identifier: Identifier, value: object) -> bool:
+def register(key: RegistryKey, identifier: Identifier, value: object):
     """
     Register a value in the registry table (by given key).
-    Return True if successful, False otherwise.
     """
     table = get_registry_table(key)
     if table is None:
-        return False
+        _REGISTRY_TABLES[key] = table = dict()
     table[identifier] = value
-    return True
 
 
 def get_registry_table(key: RegistryKey,

@@ -1,6 +1,6 @@
 import json
 from abc import ABC
-from typing import Union, Type
+from typing import Tuple, Union, Type
 
 from util.codec import Codec, Serializer
 
@@ -17,10 +17,20 @@ def _default_empty(type: Type) -> object:
 
 
 def _default_serialize(obj: any) -> dict:
-    if hasattr(obj, '__dict__'):
+    # Check if method obj.to_dict() is available
+    if hasattr(obj, 'to_dict') and callable(obj.to_dict):
+        return obj.to_dict()
+    elif hasattr(obj, '__dict__'):
         return obj.__dict__
     else:
         return dict()
+
+
+def _safe_instance(obj: any, type: Type) -> bool:
+    try:
+        return isinstance(obj, type)
+    except TypeError:
+        return False
 
 
 class JsonSaveAttributes(Serializer, Codec, ABC):
@@ -50,19 +60,35 @@ class JsonSaveAttributes(Serializer, Codec, ABC):
 
     def _deserialize_loop(self, target: any, force_type=True,
                           default: callable = _default_empty) -> any:
-        if isinstance(target, self.sourceType):
+        if _safe_instance(target, self.sourceType):
             return target
         else:
             if isinstance(target, dict):
                 empty_target_object: object = default(self.sourceType)
                 # Try to convert
                 for key in target:
+                    key: str
                     value = target[key]
                     if empty_target_object.__annotations__.get(key) is not None:
                         # Defined
                         value_type: Type = empty_target_object.__annotations__.get(key)
-                        if isinstance(value, value_type):
+                        if _safe_instance(value, value_type):
                             setattr(empty_target_object, key, value)
+                        elif isinstance(value, list):
+                            # Deserialize recursively
+                            try:
+                                args: Type = value_type.__args__[0]
+                                new_codec = JsonSaveAttributes(args)
+                                setattr(empty_target_object, key, list())
+                                lis = getattr(empty_target_object, key)
+
+                                # Deserialize each element
+                                for i in value:
+                                    lis.append(new_codec._deserialize_loop(i, force_type, default))
+                            except AttributeError:
+                                # Not able to convert
+                                setattr(empty_target_object, key,
+                                        default(value_type) if force_type else value)
                         elif isinstance(value, dict):
                             # Deserialize recursively
                             new_codec = JsonSaveAttributes(value_type)
@@ -73,7 +99,17 @@ class JsonSaveAttributes(Serializer, Codec, ABC):
                             setattr(empty_target_object, key,
                                     default(value_type) if force_type else value)
                 return empty_target_object
-
+            elif (isinstance(target, list) and self.sourceType.__origin__ == list):
+                empty_target_object: list = list()
+                # Try to convert
+                for element in target:
+                    try:
+                        element_type: Type = self.sourceType.__args__[0]
+                        new_codec = JsonSaveAttributes(element_type)
+                        empty_target_object.append(new_codec._deserialize_loop(element, force_type, default))
+                    except AttributeError:
+                        empty_target_object.append(default(self.sourceType) if force_type else target)
+                return empty_target_object
             else:
                 # Not able to convert
                 return default(self.sourceType) if force_type else target

@@ -18,3 +18,6 @@ class RegistryTable:
 
     def __getitem__(self, key):
         return self.get(key)
+    
+    def __dict__(self):
+        return {str(key):self.data[key] for key in self.data}

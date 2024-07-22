@@ -17,3 +17,8 @@ class Identifier:
 
     def __hash__(self):
         return hash((self.namespace, self.path))
+    
+    @classmethod
+    def from_str(cls, identifier_str: str):
+        namespace, path = identifier_str.split(":")
+        return cls(namespace, path)
