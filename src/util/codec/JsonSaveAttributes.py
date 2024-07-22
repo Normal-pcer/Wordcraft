@@ -1,8 +1,8 @@
 import json
 from abc import ABC
-
-from util.codec import Codec
 from typing import Union, Type
+
+from util.codec import Codec, Serializer
 
 
 def _rollback_empty(type: Type) -> object:
@@ -16,14 +16,21 @@ def _default_empty(type: Type) -> object:
         return _rollback_empty(type)
 
 
-class JsonSaveAttributes(Codec, ABC):
+def _default_serialize(obj: any) -> dict:
+    if hasattr(obj, '__dict__'):
+        return obj.__dict__
+    else:
+        return dict()
+
+
+class JsonSaveAttributes(Serializer, Codec, ABC):
     sourceType: Type
 
-    def __init__(self, source_type: Type):
+    def __init__(self, source_type: Type = object):
         self.sourceType = source_type
 
     def serialize(self, source: any) -> str:
-        return json.dumps(source, default=lambda obj: obj.__dict__)
+        return json.dumps(source, default=_default_serialize)
 
     def deserialize(self, source: str, force_type=True, default: callable = _default_empty) -> any:
         """Deserialize a json string to a python object (based on type self.sourceType).
@@ -40,8 +47,9 @@ class JsonSaveAttributes(Codec, ABC):
         """
         target: Union[int, float, str, list, dict] = json.loads(source)
         return self._deserialize_loop(target, force_type, default)
-        
-    def _deserialize_loop(self, target: any, force_type=True, default: callable = _default_empty) -> any:
+
+    def _deserialize_loop(self, target: any, force_type=True,
+                          default: callable = _default_empty) -> any:
         if isinstance(target, self.sourceType):
             return target
         else:
@@ -62,7 +70,8 @@ class JsonSaveAttributes(Codec, ABC):
                                     new_codec._deserialize_loop(value, force_type, default))
                         else:
                             # Not able to convert
-                            setattr(empty_target_object, key, default(value_type) if force_type else value)
+                            setattr(empty_target_object, key,
+                                    default(value_type) if force_type else value)
                 return empty_target_object
 
             else:

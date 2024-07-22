@@ -1,5 +1,4 @@
 from abc import ABCMeta, abstractmethod
-from util.codec import Serializer
 from typing import TypeVar
 
 
@@ -19,6 +18,3 @@ class Codec(metaclass=ABCMeta):
     @abstractmethod
     def deserialize(self, source: T) -> any:
         pass
-
-    def to_serializer(self) -> Serializer:
-        return Serializer(self.serialize)

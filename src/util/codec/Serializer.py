@@ -1,6 +1,7 @@
 from abc import ABCMeta, abstractmethod
 from typing import TypeVar
 
+
 class Serializer(metaclass=ABCMeta):
     """
     wordcraft.util.codec.Serializer
@@ -8,10 +9,7 @@ class Serializer(metaclass=ABCMeta):
     """
 
     T = TypeVar('T')
-    
-    def __init__(self, serialize: callable) -> None:
-        self.serialize = serialize
-    
+
     @abstractmethod
     def serialize(self, source) -> T:
         pass
