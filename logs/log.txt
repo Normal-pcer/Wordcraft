@@ -1,2 +1,4 @@
 [test2][DEBUG general at 2024-07-22 10:03:35]test 114514 1919810 [1, 2, 3] {"bar1": 1, "bar2": "9"}  
 [test2][DEBUG general at 2024-07-22 10:22:23]test 114514 1919810 [1, 2, 3] <__main__.foo object at 0x0000022A1191FCB0>  
+[test2][DEBUG #general at 2024-07-22 11:11:06]test 114514 1919810 [1, 2, 3] <__main__.foo object at 0x000001E43061ED80>  
+[test2][DEBUG #general at 2024-07-22 11:11:26]test 114514 1919810 [1, 2, 3] <__main__.foo object at 0x000001D8423593D0>  
