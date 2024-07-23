@@ -89,6 +89,20 @@ class JsonSaveAttributes(Serializer, Codec, ABC):
                                 # Not able to convert
                                 setattr(empty_target_object, key,
                                         default(value_type) if force_type else value)
+                        elif (isinstance(value, dict) and value_type.__origin__ == dict):
+                            try: 
+                                args: Type = value_type.__args__[1]
+                                new_codec = JsonSaveAttributes(args)
+                                setattr(empty_target_object, key, dict())
+                                dic = getattr(empty_target_object, key)
+
+                                # Deserialize each element
+                                for i in value:
+                                    dic[i] = new_codec._deserialize_loop(value[i], force_type, default)
+                            except AttributeError:
+                                # Not able to convert
+                                setattr(empty_target_object, key,
+                                        default(value_type) if force_type else value)
                         elif isinstance(value, dict):
                             # Deserialize recursively
                             new_codec = JsonSaveAttributes(value_type)

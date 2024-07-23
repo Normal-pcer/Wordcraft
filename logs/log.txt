@@ -152,3 +152,15 @@
 [test][INFO at 2024-07-22 22:49:41]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]]}  
 [test2][INFO at 2024-07-22 22:49:41]{"_keys": ["1", "2", "3"], "_values": [1, 2, 3]}  
 [test2][INFO at 2024-07-22 22:49:41]{"_keys": ["1", "2", "3"], "_values": [1, 2, 3]}  
+[test][INFO at 2024-07-23 08:41:00]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 08:41:00]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 08:41:00]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test2][INFO at 2024-07-23 08:41:00]{"_keys": ["1", "2", "3"], "_values": [1, 2, 3]}  
+[test2][INFO at 2024-07-23 08:41:00]{"_keys": ["1", "2", "3"], "_values": [1, 2, 3]}  
+[test][INFO at 2024-07-23 08:41:28]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 08:41:28]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 08:41:28]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 08:44:32]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 08:44:32]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 08:51:35]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 08:51:35]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
