@@ -1,4 +1,4 @@
-from network import Node
+from _network import Node
 
 
 class Host:
