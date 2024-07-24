@@ -164,3 +164,54 @@
 [test][INFO at 2024-07-23 08:44:32]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
 [test][INFO at 2024-07-23 08:51:35]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
 [test][INFO at 2024-07-23 08:51:35]{"name": "test", "bar1": [[{"namespace": "1", "path": "1"}, {"namespace": "4", "path": "5"}], [{"namespace": "1", "path": "4"}]], "bar2": {"1": {"namespace": "test", "path": "1"}, "2": {"namespace": "test", "path": "2"}}}  
+[test][INFO at 2024-07-23 17:13:30]{"value": 1, "children": [{"value": 114}, {"value": 115}]} 1  
+[test][INFO at 2024-07-23 17:49:53]{"value": 1, "children": [{"value": 114}, {"value": 115}]} 1  
+[test][INFO at 2024-07-23 21:40:52]{"value": 1, "children": [{"value": 114}, {"value": 115}]} 1  
+[test][INFO at 2024-07-24 09:47:06]{"value": 1, "children": [{"value": 114}, {"value": 115}]} 1  
+[test][INFO at 2024-07-24 10:04:14]f {"num1": 11, "num2": 45, "num3": 14, "bar": {}}  
+[test][INFO at 2024-07-24 10:04:14]calcsum 70  
+[test][INFO at 2024-07-24 10:04:14]f {"num1": 11, "num2": 45, "num3": 14, "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:06:28]f {"num1": 11, "num2": 45, "num3": 14, "bar": {}}  
+[test][INFO at 2024-07-24 10:06:28]calcsum 70  
+[test][INFO at 2024-07-24 10:06:28]f {"num1": 11, "num2": 45, "num3": 14, "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:12:41]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:12:42]calcsum 70  
+[test][INFO at 2024-07-24 10:12:42]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:17:33]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:17:33]calcsum 70  
+[test][INFO at 2024-07-24 10:17:33]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:21:34]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:21:34]calcsum 70  
+[test][INFO at 2024-07-24 10:21:34]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:24:34]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:24:34]calcsum 70  
+[test][INFO at 2024-07-24 10:24:34]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:30:26]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:30:26]calcsum 70  
+[test][INFO at 2024-07-24 10:30:26]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:30:53]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:30:53]calcsum 70  
+[test][INFO at 2024-07-24 10:30:53]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:32:01]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:32:01]calcsum 70  
+[test][INFO at 2024-07-24 10:32:01]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:34:19]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:34:19]calcsum 70  
+[test][INFO at 2024-07-24 10:34:19]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:34:47]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:34:47]calcsum 70  
+[test][INFO at 2024-07-24 10:34:47]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:36:03]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:36:03]calcsum 70  
+[test][INFO at 2024-07-24 10:36:03]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:38:00]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:38:00]calcsum 70  
+[test][INFO at 2024-07-24 10:38:00]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:39:29]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:39:29]calcsum 70  
+[test][INFO at 2024-07-24 10:39:29]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:39:38]f2 {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:40:05]f {"nums": [11, 45, 14], "bar": {}}  
+[test][INFO at 2024-07-24 10:40:05]calcsum 70  
+[test][INFO at 2024-07-24 10:40:05]f {"nums": [11, 45, 14], "bar": {}, "sum": 70}  
+[test][INFO at 2024-07-24 10:41:23]f2 {"nums": [11, 45, 14], "bar": {}, "sum": 70}  

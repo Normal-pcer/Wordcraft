@@ -1,4 +1,4 @@
-test.py
+src/test*.py
 .idea/*
 .vscode/*
 __pycache__/*
